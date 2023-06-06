@@ -1,4 +1,4 @@
-import { ComponentProps, ReactNode, useEffect } from "react";
+import { ComponentProps, ReactNode } from "react";
 import { Switch as AriaSwitch } from "react-aria-components";
 import { useDarkMode } from "@/hooks/useDarkMode";
 

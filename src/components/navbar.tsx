@@ -41,7 +41,7 @@ export default function NavBar() {
       </span>
 
       <span
-        className="flex flex-col justify-between w-6 h-5 md:hidden"
+        className="flex flex-col justify-between w-6 h-5 cursor-pointer md:hidden"
         onClick={() => setIsHamburger(true)}
       >
         <span className="w-full h-0.5 dark:bg-white bg-gray-900 rounded-sm" />
