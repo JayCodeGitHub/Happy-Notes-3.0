@@ -1,20 +1,12 @@
 import { ComponentProps, ReactNode, useEffect } from "react";
 import { Switch as AriaSwitch } from "react-aria-components";
-import { useState } from "react";
+import { useDarkMode } from "@/hooks/useDarkMode";
 
 export default function DarkModeToggle({
   children,
   ...props
 }: { children: ReactNode } & ComponentProps<typeof AriaSwitch>) {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-
-    localStorage.setItem("darkMode", !darkMode ? "dark" : "light");
-
-    document.body.classList.toggle("dark");
-  };
+  const { toggleDarkMode } = useDarkMode();
   return (
     <AriaSwitch
       {...props}
