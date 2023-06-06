@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DarkModeToggle from "./darkModeToggle";
 
 export default function NavBar() {
   return (
@@ -20,6 +21,8 @@ export default function NavBar() {
           <li>Sites</li>
         </Link>
       </ul>
+
+      <DarkModeToggle>Dark Mode</DarkModeToggle>
     </nav>
   );
 }
