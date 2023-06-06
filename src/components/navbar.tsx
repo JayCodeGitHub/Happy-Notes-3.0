@@ -20,7 +20,7 @@ export default function NavBar() {
               {router.pathname == href && (
                 <motion.span
                   layoutId="bubble"
-                  className="absolute inset-0 z-10 bg-[#3b82f6] "
+                  className="absolute inset-0 z-10 bg-green-500 "
                   style={{ borderRadius: 9999 }}
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
@@ -62,7 +62,7 @@ export default function NavBar() {
         }`}
       >
         <div className="flex flex-col items-center gap-24">
-          <div className="w-40 h-40 bg-[#3b82f6] rounded-full flex justify-center items-center">
+          <div className="flex items-center justify-center w-40 h-40 bg-green-500 rounded-full">
             <svg
               className="w-2/5 h-2/5"
               xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ export default function NavBar() {
                   className={`flex items-center justify-center w-40 py-2 transition-all rounded-lg dark:text-white
                     ${
                       router.pathname == href
-                        ? "bg-[#3b82f6] text-white"
+                        ? "bg-green-500 text-white"
                         : "text-gray-900"
                     }
                   `}
