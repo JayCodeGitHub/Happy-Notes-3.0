@@ -3,7 +3,7 @@ import DarkModeToggle from "./darkModeToggle";
 
 export default function NavBar() {
   return (
-    <nav>
+    <nav className="min-h-screen text-gray-900 transition-all bg-slate-100 dark:bg-gray-900 dark:text-white">
       <ul>
         <Link href="/">
           <li>Home</li>
