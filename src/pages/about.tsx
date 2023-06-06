@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <main className="absolute flex flex-col items-center justify-start w-full h-screen gap-5 transition-all bg-slate-100 dark:bg-gray-900">
-      <section className="w-1/2 px-0 mx-auto mt-16 ">
+      <section className="px-4 mx-auto mt-16 md:px-0 md:w-1/2">
         <h1 className="mb-12 text-3xl text-gray-900 transition-all dark:text-white">
           About
         </h1>
