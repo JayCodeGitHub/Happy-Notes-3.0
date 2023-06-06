@@ -1,6 +1,6 @@
 export default function Sites() {
   return (
-    <main>
+    <main className="min-h-screen text-gray-900 transition-all bg-slate-100 dark:bg-gray-900 dark:text-white">
       <h1>sites</h1>
     </main>
   );

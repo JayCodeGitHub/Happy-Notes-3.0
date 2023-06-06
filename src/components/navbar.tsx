@@ -21,7 +21,6 @@ export default function NavBar() {
           <li>Sites</li>
         </Link>
       </ul>
-
       <DarkModeToggle>Dark Mode</DarkModeToggle>
     </nav>
   );
