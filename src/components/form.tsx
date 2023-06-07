@@ -12,10 +12,10 @@ export default function Form() {
         className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
       />
       <span className="mt-4 ">
-        <button className="px-4 py-2 ml-1 border-2 border-gray-900 rounded-md">
-          Submit
+        <button className="px-4 py-2 ml-1 text-white transition-all bg-green-500 rounded-md hover:bg-green-600">
+          Save
         </button>
-        <button className="px-4 py-2 ml-4 border-2 border-gray-900 rounded-md">
+        <button className="px-4 py-2 ml-4 transition-all border-2 border-gray-900 rounded-md hover:border-gray-500 hover:text-gray-500">
           Cancel
         </button>
       </span>
