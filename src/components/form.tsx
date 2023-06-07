@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
-export default function Form() {
+interface FormProps {
+  type: string;
+}
+
+export default function Form({ type }: FormProps) {
   return (
     <motion.form
       initial={{ opacity: 0 }}
@@ -14,11 +18,23 @@ export default function Form() {
         type="text"
         className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
       />
-      <label className="mt-4 mb-1 ml-2">note</label>
-      <textarea
-        rows={10}
-        className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
-      />
+      {type === "note" ? (
+        <>
+          <label className="mt-4 mb-1 ml-2">note</label>
+          <textarea
+            rows={10}
+            className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
+          />
+        </>
+      ) : type === "site" ? (
+        <>
+          <label className="mt-4 mb-1 ml-2">href</label>
+          <input
+            type="text"
+            className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
+          />
+        </>
+      ) : null}
       <span className="mt-4 ">
         <button className="px-4 py-2 ml-1 text-white transition-all bg-green-500 rounded-md hover:bg-green-600">
           Save

@@ -8,7 +8,7 @@ export default function ToDo() {
       <section className="flex flex-col items-start w-full mt-5 md:w-60 px-14 md:px-0">
         <Task task={task} />
       </section>
-      <AddNew />
+      <AddNew type="todo" />
     </main>
   );
 }

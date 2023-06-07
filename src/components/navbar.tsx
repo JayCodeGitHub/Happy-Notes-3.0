@@ -15,7 +15,7 @@ export default function NavBar() {
           <li key={name}>
             <Link
               href={href}
-              className="px-5 py-2.5 rounded-full transition-all cursor-pointer hover:text-gray-400 relative"
+              className="px-5 py-2.5 rounded-full transition-all cursor-pointer hover:text-gray-400 relative "
             >
               {router.pathname == href && (
                 <motion.span

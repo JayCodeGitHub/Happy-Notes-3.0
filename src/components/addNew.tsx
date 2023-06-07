@@ -1,7 +1,11 @@
 import { useState } from "react";
 import Form from "./form";
 
-export default function AddNew() {
+interface AddNewProps {
+  type: string;
+}
+
+export default function AddNew({ type }: AddNewProps) {
   const [visible, setVisible] = useState(false);
   return (
     <>
@@ -22,7 +26,7 @@ export default function AddNew() {
                 : " bg-background-invisible invisible "
             }`}
           />
-          <Form />
+          <Form type={type} />
         </span>
       ) : null}
     </>
