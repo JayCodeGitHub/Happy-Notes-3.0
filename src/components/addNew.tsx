@@ -13,7 +13,15 @@ export default function AddNew() {
         <span className="absolute w-1 h-8 -translate-x-1/2 -translate-y-1/2 bg-white rounded-sm top-1/2 left-1/2"></span>
       </button>
       {visible ? (
-        <span onClick={() => setVisible(false)}>
+        <span>
+          <span
+            onClick={() => setVisible(false)}
+            className={`fixed top-0 left-0 w-full h-full z-20 transition-all ${
+              visible
+                ? " bg-background-visible visible"
+                : " bg-background-invisible invisible "
+            }`}
+          />
           <Form />
         </span>
       ) : null}
