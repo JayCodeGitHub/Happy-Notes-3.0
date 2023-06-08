@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useTasks } from "@/hooks/useTasks";
-import { useNotes } from "@/hooks/useNotes";
-import { useSites } from "@/hooks/useSites";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "@/state";
 
 interface FormProps {
   type: string;
 }
 
 export default function Form({ type }: FormProps) {
-  const { addTask } = useTasks();
-  const { addNote } = useNotes();
-  const { addSite } = useSites();
+  const dispatch = useDispatch();
+  const { addItem } = bindActionCreators(actionCreators, dispatch);
   const [form, setForm] = useState({
     title: "",
     body: "",
@@ -26,13 +25,7 @@ export default function Form({ type }: FormProps) {
   };
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    if (type === "todo") {
-      addTask(form.title);
-    } else if (type === "note") {
-      addNote(form.title, form.body);
-    } else if (type === "site") {
-      addSite(form.title, form.url);
-    }
+    addItem(type, form.title, form.body);
   };
 
   return (
@@ -51,7 +44,7 @@ export default function Form({ type }: FormProps) {
         onChange={updateField}
         className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
       />
-      {type === "note" ? (
+      {type === "notes" ? (
         <>
           <label className="mt-4 mb-1 ml-2">note</label>
           <textarea
@@ -61,11 +54,11 @@ export default function Form({ type }: FormProps) {
             className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
           />
         </>
-      ) : type === "site" ? (
+      ) : type === "sites" ? (
         <>
           <label className="mt-4 mb-1 ml-2">url</label>
           <input
-            name="url"
+            name="body"
             type="text"
             onChange={updateField}
             className="p-1 bg-transparent border-2 border-gray-900 rounded-md"

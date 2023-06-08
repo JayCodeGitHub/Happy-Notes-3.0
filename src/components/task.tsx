@@ -1,21 +1,24 @@
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "@/state";
+import { motion } from "framer-motion";
 import CheckBox from "./checkBox";
 import TaskLabel from "./taskLabel";
-import { motion } from "framer-motion";
-import { useTasks } from "@/hooks/useTasks";
 
 interface TaskProps {
-  task: { title: string; done: boolean };
+  task: { title: string; body: string };
 }
 
 export default function Task({ task }: TaskProps) {
-  const { removeTask, setStatus } = useTasks();
+  const dispatch = useDispatch();
+  const { removeItem } = bindActionCreators(actionCreators, dispatch);
 
   function handleDragEnd(event: any, info: any) {
     const offset = info.offset.x;
     const velocity = info.velocity.x;
 
     if (offset < -50 || offset > 50 || velocity < -50) {
-      removeTask(task.title);
+      removeItem(task.title, "todos");
     }
   }
   return (
@@ -31,10 +34,10 @@ export default function Task({ task }: TaskProps) {
       transition={{ opacity: { duration: 0.2 } }}
     >
       <motion.span className="flex items-center">
-        <span onClick={() => setStatus(task.title)}>
-          <CheckBox isDone={task.done} />
+        <span>
+          <CheckBox isDone={task.body} />
         </span>
-        <TaskLabel isDone={task.done}>{task.title}</TaskLabel>
+        <TaskLabel isDone={task.body}>{task.title}</TaskLabel>
       </motion.span>
     </motion.span>
   );

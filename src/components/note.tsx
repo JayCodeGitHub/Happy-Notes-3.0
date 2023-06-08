@@ -1,4 +1,6 @@
-import { useNotes } from "@/hooks/useNotes";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "@/state";
 import { motion } from "framer-motion";
 
 interface NoteProps {
@@ -7,7 +9,8 @@ interface NoteProps {
 }
 
 export default function Note({ title, body }: NoteProps) {
-  const { removeNote } = useNotes();
+  const dispatch = useDispatch();
+  const { removeItem } = bindActionCreators(actionCreators, dispatch);
   return (
     <motion.div
       className="overflow-hidden bg-gray-700 rounded-md h-96"
@@ -21,7 +24,7 @@ export default function Note({ title, body }: NoteProps) {
         <h1 className="text-lg text-white truncate">{title}</h1>
         <button
           className="px-4 py-2 ml-1 text-white transition-all bg-gray-700 rounded-full hover:bg-gray-500"
-          onClick={() => removeNote(title)}
+          onClick={() => removeItem(title, "notes")}
         >
           Remove
         </button>

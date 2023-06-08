@@ -1,4 +1,6 @@
-import { useSites } from "@/hooks/useSites";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "@/state";
 import { motion } from "framer-motion";
 
 interface SiteProps {
@@ -7,7 +9,8 @@ interface SiteProps {
 }
 
 export default function Site({ title, url }: SiteProps) {
-  const { removeSite } = useSites();
+  const dispatch = useDispatch();
+  const { removeItem } = bindActionCreators(actionCreators, dispatch);
   return (
     <motion.div
       className="p-2 overflow-hidden text-center bg-gray-700 rounded-md"
@@ -25,7 +28,7 @@ export default function Site({ title, url }: SiteProps) {
           </button>
         </a>
         <button
-          onClick={() => removeSite(title)}
+          onClick={() => removeItem(title, "sites")}
           className="px-4 py-2 ml-1 text-white transition-all bg-gray-400 rounded-full hover:bg-gray-500"
         >
           Remove
