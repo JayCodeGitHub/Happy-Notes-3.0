@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTasks } from "@/hooks/useTasks";
+import { useNotes } from "@/hooks/useNotes";
 
 interface FormProps {
   type: string;
 }
 
 export default function Form({ type }: FormProps) {
-  const { tasks, addTask } = useTasks();
+  const { addTask } = useTasks();
+  const { addNote } = useNotes();
   const [form, setForm] = useState({
     title: "",
-    note: "",
+    body: "",
     url: "",
   });
 
@@ -25,6 +27,8 @@ export default function Form({ type }: FormProps) {
     console.log("form submited", form);
     if (type === "todo") {
       addTask(form.title);
+    } else if (type === "note") {
+      addNote(form.title, form.body);
     }
   };
 
@@ -48,7 +52,7 @@ export default function Form({ type }: FormProps) {
         <>
           <label className="mt-4 mb-1 ml-2">note</label>
           <textarea
-            name="note"
+            name="body"
             rows={10}
             onChange={updateField}
             className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
