@@ -15,9 +15,9 @@ export default function Note({ title, body }: NoteProps) {
     <motion.div
       className="overflow-hidden bg-gray-700 rounded-md h-96"
       layout
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.8 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ opacity: { duration: 0.2 } }}
     >
       <div className="flex items-center justify-between h-16 px-4 bg-green-500">
