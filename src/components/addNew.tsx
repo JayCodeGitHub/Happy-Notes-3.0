@@ -26,7 +26,7 @@ export default function AddNew({ type }: AddNewProps) {
                 : " bg-background-invisible invisible "
             }`}
           />
-          <Form type={type} />
+          <Form type={type} setVisible={setVisible} />
         </span>
       ) : null}
     </>
