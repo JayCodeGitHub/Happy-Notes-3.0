@@ -22,4 +22,6 @@ export const removeItem = (title: string, itemType: string) => {
   };
 };
 
+export const setStatus = (title: string, itemType: string) => {};
+
 export const fetchItems = () => {};

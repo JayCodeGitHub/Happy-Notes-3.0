@@ -49,6 +49,10 @@ const Reducer = (state = initialState, action: Action) => {
           ),
         ],
       };
+    case ActionType.SETSTATUS:
+      return {
+        ...state,
+      };
     case ActionType.FETCHITEMS:
       return {
         ...state,

@@ -15,6 +15,12 @@ interface IRemoveItemAction {
   itemType: "notes" | "sites" | "todos";
 }
 
+interface ISetStatusAction {
+  type: ActionType.SETSTATUS;
+  title: string;
+  itemType: "notes" | "sites" | "todos";
+}
+
 interface IFetchItemsAction {
   type: ActionType.FETCHITEMS;
   notes: Array<{ _id: string; itemType: string; title: string; body: string }>;
@@ -22,4 +28,8 @@ interface IFetchItemsAction {
   sites: Array<{ _id: string; itemType: string; title: string; body: string }>;
 }
 
-export type Action = IAddItemAction | IRemoveItemAction | IFetchItemsAction;
+export type Action =
+  | IAddItemAction
+  | IRemoveItemAction
+  | ISetStatusAction
+  | IFetchItemsAction;
