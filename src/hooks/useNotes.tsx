@@ -26,11 +26,11 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
   }, []);
 
   const addNote = async (title: string, body: string) => {
-    setNotes((notes) => [{ title: title, body: body }, ...notes]);
+    setNotes((notes) => [...notes, { title: title, body: body }]);
 
     localStorage.setItem(
       "tasks",
-      JSON.stringify([{ title: title, body: body }, ...notes])
+      JSON.stringify([...notes, { title: title, body: body }])
     );
   };
 
