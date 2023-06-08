@@ -24,7 +24,6 @@ export default function Form({ type }: FormProps) {
   };
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("form submited", form);
     if (type === "todo") {
       addTask(form.title);
     } else if (type === "note") {

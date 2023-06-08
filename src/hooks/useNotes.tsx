@@ -29,7 +29,7 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
     setNotes((notes) => [...notes, { title: title, body: body }]);
 
     localStorage.setItem(
-      "tasks",
+      "notes",
       JSON.stringify([...notes, { title: title, body: body }])
     );
   };
