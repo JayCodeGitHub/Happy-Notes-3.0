@@ -13,7 +13,7 @@ export default function Note({ title, body }: NoteProps) {
   const { removeItem } = bindActionCreators(actionCreators, dispatch);
   return (
     <motion.div
-      className="overflow-hidden bg-gray-700 rounded-md h-96"
+      className="overflow-hidden transition-all rounded-md dark:bg-gray-700 bg-slate-200 h-96"
       layout
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -23,13 +23,15 @@ export default function Note({ title, body }: NoteProps) {
       <div className="flex items-center justify-between h-16 px-4 bg-green-500">
         <h1 className="text-lg text-white truncate">{title}</h1>
         <button
-          className="px-4 py-2 ml-1 text-white transition-all bg-gray-700 rounded-full hover:bg-gray-500"
+          className="px-4 py-2 ml-1 text-gray-900 transition-all rounded-full dark:text-white dark:bg-gray-700 bg-slate-200 dark:hover:bg-gray-500 hover:bg-slate-300"
           onClick={() => removeItem(title, "notes")}
         >
           Remove
         </button>
       </div>
-      <p className="m-4 overflow-hidden text-base text-white h-72">{body}</p>
+      <p className="m-4 overflow-hidden text-base text-gray-900 transition-all dark:text-white h-72">
+        {body}
+      </p>
     </motion.div>
   );
 }
