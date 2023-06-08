@@ -17,7 +17,10 @@ export default function App({ Component, pageProps }: AppProps) {
           your notes are securely stored on the user's device. Seamlessly designed with an intuitive layout, Happy Notes enhances productivity and streamlines your note-taking experience. 
           Whether it's personal memos, brainstorming sessions, or task lists, this app is a perfect companion for organizing your thoughts and staying productive."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1 user-scalable=no"
+        />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="icon" href="/favicon-196.png" />
         <meta name="theme-color" content="#22c55e" />
