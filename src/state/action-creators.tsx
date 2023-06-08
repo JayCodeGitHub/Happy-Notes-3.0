@@ -42,7 +42,6 @@ export const fetchItems = () => {
       );
     } else {
       items = JSON.parse(localStorage.getItem("happy-notes") || "");
-      console.log(items);
     }
     dispatch({
       type: ActionType.FETCHITEMS,
