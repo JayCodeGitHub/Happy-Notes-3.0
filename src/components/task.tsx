@@ -1,4 +1,3 @@
-import { useState } from "react";
 import CheckBox from "./checkBox";
 import TaskLabel from "./taskLabel";
 import { motion } from "framer-motion";
