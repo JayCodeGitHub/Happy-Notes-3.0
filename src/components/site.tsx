@@ -15,9 +15,9 @@ export default function Site({ title, url }: SiteProps) {
     <motion.div
       className="p-2 overflow-hidden text-center transition-colors rounded-md dark:bg-gray-700 bg-slate-200"
       layout
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.8 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ opacity: { duration: 0.2 } }}
     >
       <h1 className="text-xl text-gray-900 transition-colors dark:text-white">
