@@ -1,4 +1,5 @@
 import { useSites } from "@/hooks/useSites";
+import { motion } from "framer-motion";
 
 interface SiteProps {
   title: string;
@@ -8,7 +9,14 @@ interface SiteProps {
 export default function Site({ title, url }: SiteProps) {
   const { removeSite } = useSites();
   return (
-    <div className="p-2 overflow-hidden text-center bg-gray-700 rounded-md">
+    <motion.div
+      className="p-2 overflow-hidden text-center bg-gray-700 rounded-md"
+      layout
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.8 }}
+      transition={{ opacity: { duration: 0.2 } }}
+    >
       <h1 className="text-xl text-white">{title}</h1>
       <span className="flex justify-around w-full mt-2">
         <a href={url} target="_blank">
@@ -23,6 +31,6 @@ export default function Site({ title, url }: SiteProps) {
           Remove
         </button>
       </span>
-    </div>
+    </motion.div>
   );
 }
