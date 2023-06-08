@@ -23,7 +23,6 @@ export const removeItem = (title: string, itemType: string) => {
 };
 
 export const setStatus = (title: string, itemType: string) => {
-  console.log(title);
   return async (dispatch: Dispatch) => {
     dispatch({
       type: ActionType.SETSTATUS,
@@ -33,4 +32,10 @@ export const setStatus = (title: string, itemType: string) => {
   };
 };
 
-export const fetchItems = () => {};
+export const fetchItems = () => {
+  return async (dispatch: Dispatch) => {
+    dispatch({
+      type: ActionType.FETCHITEMS,
+    });
+  };
+};

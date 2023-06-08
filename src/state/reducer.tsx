@@ -71,11 +71,12 @@ const Reducer = (state = initialState, action: Action) => {
       };
 
     case ActionType.FETCHITEMS:
+      console.log("ev");
       return {
         ...state,
-        notes: action.notes,
-        todos: action.todos,
-        sites: action.sites,
+        notes: [],
+        todos: [],
+        sites: [],
       };
     default:
       return state;

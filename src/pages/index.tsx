@@ -6,5 +6,5 @@ export default function Home() {
 
   useEffect(() => {
     router.push("/notes");
-  });
+  }, []);
 }
