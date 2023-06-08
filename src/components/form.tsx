@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -10,6 +10,7 @@ interface FormProps {
 }
 
 export default function Form({ type, setVisible }: FormProps) {
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const dispatch = useDispatch();
   const { addItem } = bindActionCreators(actionCreators, dispatch);
   const [form, setForm] = useState({
@@ -30,6 +31,12 @@ export default function Form({ type, setVisible }: FormProps) {
     setVisible(false);
   };
 
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
   return (
     <motion.form
       onSubmit={handleSubmit}
@@ -41,6 +48,7 @@ export default function Form({ type, setVisible }: FormProps) {
     >
       <label className="mb-1 ml-2">title</label>
       <input
+        ref={inputRef}
         type="text"
         name="title"
         onChange={updateField}
