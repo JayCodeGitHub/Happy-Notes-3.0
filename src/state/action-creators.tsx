@@ -22,6 +22,15 @@ export const removeItem = (title: string, itemType: string) => {
   };
 };
 
-export const setStatus = (title: string, itemType: string) => {};
+export const setStatus = (title: string, itemType: string) => {
+  console.log(title);
+  return async (dispatch: Dispatch) => {
+    dispatch({
+      type: ActionType.SETSTATUS,
+      title,
+      itemType,
+    });
+  };
+};
 
 export const fetchItems = () => {};

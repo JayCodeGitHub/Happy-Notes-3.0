@@ -7,7 +7,7 @@ interface CheckBoxProps {
 export default function CheckBox({ isDone }: CheckBoxProps) {
   return (
     <motion.button
-      animate={{ backgroundColor: isDone ? "#3b82f6" : "white" }}
+      animate={{ backgroundColor: isDone === "done" ? "#3b82f6" : "white" }}
       transition={{ duration: 0.1 }}
       className={`flex items-center justify-center w-6 h-6 transition-all rounded-md ${
         isDone === "done"
@@ -24,7 +24,7 @@ export default function CheckBox({ isDone }: CheckBoxProps) {
       >
         <motion.path
           initial={{ pathLength: 0 }}
-          animate={{ pathLength: isDone ? 1 : 0 }}
+          animate={{ pathLength: isDone === "done" ? 1 : 0 }}
           transition={{ duration: 0.1, delay: 0.1 }}
           strokeLinecap="round"
           strokeLinejoin="round"

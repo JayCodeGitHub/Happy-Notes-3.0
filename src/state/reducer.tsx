@@ -52,7 +52,24 @@ const Reducer = (state = initialState, action: Action) => {
     case ActionType.SETSTATUS:
       return {
         ...state,
+        todos: state.todos.map((todo) => {
+          if (todo.title === action.title) {
+            if (todo.body === "todo" || todo.body === "") {
+              return {
+                ...todo,
+                body: "done",
+              };
+            } else if (todo.body === "done") {
+              return {
+                ...todo,
+                body: "todo",
+              };
+            }
+          }
+          return todo;
+        }),
       };
+
     case ActionType.FETCHITEMS:
       return {
         ...state,

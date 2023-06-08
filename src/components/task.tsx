@@ -11,7 +11,10 @@ interface TaskProps {
 
 export default function Task({ task }: TaskProps) {
   const dispatch = useDispatch();
-  const { removeItem } = bindActionCreators(actionCreators, dispatch);
+  const { removeItem, setStatus } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
 
   function handleDragEnd(event: any, info: any) {
     const offset = info.offset.x;
@@ -34,7 +37,7 @@ export default function Task({ task }: TaskProps) {
       transition={{ opacity: { duration: 0.2 } }}
     >
       <motion.span className="flex items-center">
-        <span>
+        <span onClick={() => setStatus(task.title, "todos")}>
           <CheckBox isDone={task.body} />
         </span>
         <TaskLabel isDone={task.body}>{task.title}</TaskLabel>
