@@ -1,6 +1,5 @@
 import AddNew from "@/components/addNew";
 import Note from "@/components/note";
-import { NotesItems } from "@/assets/notesItems";
 import { useNotes } from "@/hooks/useNotes";
 
 export default function Notes() {
