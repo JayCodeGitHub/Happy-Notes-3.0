@@ -18,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
           Whether it's personal memos, brainstorming sessions, or task lists, this app is a perfect companion for organizing your thoughts and staying productive."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Provider store={store}>
