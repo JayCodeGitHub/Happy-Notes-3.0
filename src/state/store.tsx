@@ -15,4 +15,9 @@ const composeEnhancers =
 
 const store = createStore(Reducer, composeEnhancers(applyMiddleware(thunk)));
 
+store.subscribe(() => {
+  const state = store.getState();
+  localStorage.setItem("happy-notes", JSON.stringify(state));
+});
+
 export default store;

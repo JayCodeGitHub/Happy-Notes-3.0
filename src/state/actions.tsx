@@ -23,9 +23,23 @@ interface ISetStatusAction {
 
 interface IFetchItemsAction {
   type: ActionType.FETCHITEMS;
-  notes: Array<{ _id: string; itemType: string; title: string; body: string }>;
-  todos: Array<{ _id: string; itemType: string; title: string; body: string }>;
-  sites: Array<{ _id: string; itemType: string; title: string; body: string }>;
+  items: {
+    notes: Array<{
+      itemType: string;
+      title: string;
+      body: string;
+    }>;
+    todos: Array<{
+      itemType: string;
+      title: string;
+      body: string;
+    }>;
+    sites: Array<{
+      itemType: string;
+      title: string;
+      body: string;
+    }>;
+  };
 }
 
 export type Action =

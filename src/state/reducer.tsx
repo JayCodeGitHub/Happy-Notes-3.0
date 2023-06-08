@@ -34,7 +34,6 @@ const Reducer = (state = initialState, action: Action) => {
           ...state[action.itemType],
           {
             itemType: action.itemType,
-            creator: action.creator,
             title: action.title,
             body: action.body,
           },
@@ -71,12 +70,11 @@ const Reducer = (state = initialState, action: Action) => {
       };
 
     case ActionType.FETCHITEMS:
-      console.log("ev");
       return {
         ...state,
-        notes: [],
-        todos: [],
-        sites: [],
+        notes: action.items.notes,
+        todos: action.items.todos,
+        sites: action.items.sites,
       };
     default:
       return state;

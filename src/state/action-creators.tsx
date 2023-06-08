@@ -34,8 +34,19 @@ export const setStatus = (title: string, itemType: string) => {
 
 export const fetchItems = () => {
   return async (dispatch: Dispatch) => {
+    let items = { notes: [], todos: [], sites: [] };
+    if (!localStorage.getItem("happy-notes")) {
+      localStorage.setItem(
+        "happy-notes",
+        JSON.stringify({ notes: [], todos: [], sites: [] })
+      );
+    } else {
+      items = JSON.parse(localStorage.getItem("happy-notes") || "");
+      console.log(items);
+    }
     dispatch({
       type: ActionType.FETCHITEMS,
+      items,
     });
   };
 };
