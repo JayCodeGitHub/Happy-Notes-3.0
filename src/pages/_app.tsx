@@ -20,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="icon" href="/favicon-196.png" />
+        <meta name="theme-color" content="#22c55e" />
         <link
           rel="icon"
           type="image/png"
