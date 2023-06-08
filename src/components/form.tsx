@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTasks } from "@/hooks/useTasks";
 import { useNotes } from "@/hooks/useNotes";
+import { useSites } from "@/hooks/useSites";
 
 interface FormProps {
   type: string;
@@ -10,6 +11,7 @@ interface FormProps {
 export default function Form({ type }: FormProps) {
   const { addTask } = useTasks();
   const { addNote } = useNotes();
+  const { addSite } = useSites();
   const [form, setForm] = useState({
     title: "",
     body: "",
@@ -28,6 +30,8 @@ export default function Form({ type }: FormProps) {
       addTask(form.title);
     } else if (type === "note") {
       addNote(form.title, form.body);
+    } else if (type === "site") {
+      addSite(form.title, form.url);
     }
   };
 
