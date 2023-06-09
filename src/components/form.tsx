@@ -76,6 +76,7 @@ export default function Form({ type, setVisible }: FormProps) {
         ref={inputRef}
         type="text"
         name="title"
+        maxLength={30}
         onChange={updateField}
         className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
       />
@@ -85,6 +86,7 @@ export default function Form({ type, setVisible }: FormProps) {
           <textarea
             name="body"
             rows={10}
+            maxLength={600}
             onChange={updateField}
             className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
           />
