@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 interface DarkModeProviderProps {
   children: React.ReactNode;
@@ -13,6 +13,13 @@ const DarkModeContext = React.createContext({} as DarkModeContextProps);
 
 export const DarkModeProvider = ({ children }: DarkModeProviderProps) => {
   const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("darkMode") === "dark") {
+      document.body.classList.add("dark");
+      setDarkMode(true);
+    }
+  }, []);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
