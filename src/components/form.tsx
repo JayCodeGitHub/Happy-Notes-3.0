@@ -19,7 +19,11 @@ export default function Form({ type, setVisible }: FormProps) {
     url: "",
   });
 
-  const updateField = (e: any) => {
+  const updateField = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
