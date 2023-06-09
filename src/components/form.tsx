@@ -25,7 +25,8 @@ export default function Form({ type, setVisible }: FormProps) {
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = async (e: any) => {
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     addItem(type, form.title, form.body);
     setVisible(false);
