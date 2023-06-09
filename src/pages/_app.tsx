@@ -3,6 +3,7 @@ import Head from "next/head";
 import type { AppProps } from "next/app";
 import Layout from "@/components/layout";
 import { Provider } from "react-redux";
+import { DarkModeProvider } from "@/hooks/useDarkMode";
 import store from "@/state/store";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -184,9 +185,11 @@ export default function App({ Component, pageProps }: AppProps) {
         ></link>
       </Head>
       <Provider store={store}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <DarkModeProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </DarkModeProvider>
       </Provider>
     </>
   );

@@ -6,11 +6,11 @@ export default function DarkModeToggle({
   children,
   ...props
 }: { children: ReactNode } & ComponentProps<typeof Switch>) {
-  const { toggleDarkMode } = useDarkMode();
-
+  const { darkMode, toggleDarkMode } = useDarkMode();
   return (
     <Switch
       {...props}
+      isSelected={darkMode}
       className="inline-flex items-center group touch-none"
       style={{ WebkitTapHighlightColor: "transparent" }}
       onChange={toggleDarkMode}
