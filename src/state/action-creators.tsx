@@ -34,11 +34,11 @@ export const setStatus = (title: string, itemType: string) => {
 
 export const fetchItems = () => {
   return async (dispatch: Dispatch) => {
-    let items = { notes: [], todos: [], sites: [] };
+    let items = { note: [], todo: [], site: [] };
     if (!localStorage.getItem("happy-notes")) {
       localStorage.setItem(
         "happy-notes",
-        JSON.stringify({ notes: [], todos: [], sites: [] })
+        JSON.stringify({ note: [], todo: [], site: [] })
       );
     } else {
       items = JSON.parse(localStorage.getItem("happy-notes") || "");

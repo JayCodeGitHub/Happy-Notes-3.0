@@ -2,23 +2,23 @@ import { Action } from "./actions";
 import { ActionType } from "./action-types";
 
 const initialState = {
-  notes: [
+  note: [
     {
-      itemType: "notes",
+      itemType: "note",
       title: "",
       body: "",
     },
   ],
-  todos: [
+  todo: [
     {
-      itemType: "todos",
+      itemType: "todo",
       title: "",
       body: "",
     },
   ],
-  sites: [
+  site: [
     {
-      itemType: "sites",
+      itemType: "site",
       title: "",
       body: "",
     },
@@ -51,7 +51,7 @@ const Reducer = (state = initialState, action: Action) => {
     case ActionType.SETSTATUS:
       return {
         ...state,
-        todos: state.todos.map((todo) => {
+        todo: state.todo.map((todo) => {
           if (todo.title === action.title) {
             if (todo.body === "todo" || todo.body === "") {
               return {
@@ -72,9 +72,9 @@ const Reducer = (state = initialState, action: Action) => {
     case ActionType.FETCHITEMS:
       return {
         ...state,
-        notes: action.items.notes,
-        todos: action.items.todos,
-        sites: action.items.sites,
+        note: action.items.note,
+        todo: action.items.todo,
+        site: action.items.site,
       };
     default:
       return state;

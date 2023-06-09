@@ -21,7 +21,7 @@ export default function Task({ task }: TaskProps) {
     const velocity = info.velocity.x;
 
     if (offset < -50 || offset > 50 || velocity < -50) {
-      removeItem(task.title, "todos");
+      removeItem(task.title, "todo");
     }
   }
   return (
@@ -37,7 +37,7 @@ export default function Task({ task }: TaskProps) {
       transition={{ opacity: { duration: 0.2 } }}
     >
       <motion.span className="flex items-center">
-        <span onClick={() => setStatus(task.title, "todos")}>
+        <span onClick={() => setStatus(task.title, "todo")}>
           <CheckBox isDone={task.body} />
         </span>
         <TaskLabel isDone={task.body}>{task.title}</TaskLabel>

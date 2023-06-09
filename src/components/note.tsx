@@ -24,7 +24,7 @@ export default function Note({ title, body }: NoteProps) {
         <h1 className="text-lg text-white truncate">{title}</h1>
         <button
           className="px-4 py-2 ml-1 text-gray-900 transition-colors rounded-full dark:text-white dark:bg-gray-700 bg-slate-200 dark:hover:bg-gray-500 hover:bg-slate-300"
-          onClick={() => removeItem(title, "notes")}
+          onClick={() => removeItem(title, "note")}
         >
           Remove
         </button>

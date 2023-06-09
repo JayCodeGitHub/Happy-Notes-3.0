@@ -2,7 +2,7 @@ import { useState } from "react";
 import Form from "./form";
 
 interface AddNewProps {
-  type: "notes" | "sites" | "todos";
+  type: "note" | "site" | "todo";
 }
 
 export default function AddNew({ type }: AddNewProps) {

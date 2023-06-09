@@ -2,9 +2,7 @@ import { ActionType } from "./action-types";
 
 interface IAddItemAction {
   type: ActionType.ADDITEM;
-  itemType: "notes" | "sites" | "todos";
-  _id: string;
-  creator: string;
+  itemType: "note" | "site" | "todo";
   title: string;
   body: string;
 }
@@ -12,29 +10,29 @@ interface IAddItemAction {
 interface IRemoveItemAction {
   type: ActionType.REMOVEITEM;
   title: string;
-  itemType: "notes" | "sites" | "todos";
+  itemType: "note" | "site" | "todo";
 }
 
 interface ISetStatusAction {
   type: ActionType.SETSTATUS;
   title: string;
-  itemType: "notes" | "sites" | "todos";
+  itemType: "note" | "site" | "todo";
 }
 
 interface IFetchItemsAction {
   type: ActionType.FETCHITEMS;
   items: {
-    notes: Array<{
+    note: Array<{
       itemType: string;
       title: string;
       body: string;
     }>;
-    todos: Array<{
+    todo: Array<{
       itemType: string;
       title: string;
       body: string;
     }>;
-    sites: Array<{
+    site: Array<{
       itemType: string;
       title: string;
       body: string;

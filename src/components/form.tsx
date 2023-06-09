@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import { actionCreators, State } from "@/state";
 
 interface FormProps {
-  type: "notes" | "sites" | "todos";
+  type: "note" | "site" | "todo";
   setVisible: (state: boolean) => void;
 }
 
@@ -79,7 +79,7 @@ export default function Form({ type, setVisible }: FormProps) {
         onChange={updateField}
         className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
       />
-      {type === "notes" ? (
+      {type === "note" ? (
         <>
           <label className="mt-4 mb-1 ml-2">note</label>
           <textarea
@@ -89,7 +89,7 @@ export default function Form({ type, setVisible }: FormProps) {
             className="p-1 bg-transparent border-2 border-gray-900 rounded-md"
           />
         </>
-      ) : type === "sites" ? (
+      ) : type === "site" ? (
         <>
           <label className="mt-4 mb-1 ml-2">url</label>
           <input

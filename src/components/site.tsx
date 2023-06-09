@@ -30,7 +30,7 @@ export default function Site({ title, url }: SiteProps) {
           </button>
         </a>
         <button
-          onClick={() => removeItem(title, "sites")}
+          onClick={() => removeItem(title, "site")}
           className="px-4 py-2 ml-1 text-white transition-colors bg-gray-400 rounded-full hover:bg-gray-500"
         >
           Remove
